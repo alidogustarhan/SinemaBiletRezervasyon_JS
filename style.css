@@ -1,0 +1,95 @@
+body {
+    background-color: #292929;
+    display: flex;
+    flex-direction: column;
+    /* FLEX ÖZELLİĞİ VERDİĞİMİZDE AYNI ÖZELLİKLTE OLAN ELEMANLAR
+    MESELA İKİSİ DE DIV. BUNLAR YANYANA SIRALANIR
+    ANCAK BİZ FLEX DIRECTION KISMINI COLUMN OLARAK DEGISTIRIRSEK 
+    ALT ALTA OLARAK SIRALAYACAKTIR. */
+    align-items: center;
+    justify-content: center;
+    /* Aşağıda .row kısmında koltukların yanyana şekilde
+    sıralanmasını ayarladık. Yukardaki kodlarla ise bütün design ımızın 
+    sayfanın tam ortasında olmasını sağladık.Ancak aşşağıdaki height 
+    100vh kısmını şu yüzden yazmak zorunda kaldık. Çünkü body nin kapladığı alan
+    yukarda küçük bir kısımdı. Bizim hizalamalarımız da bu alana göre yapılıyordu
+    Biz alanı büyüttük ve body nin sayfanın hepsini kaplamasını sağladık
+    Bu şekilde hizalamalarımız istediğimiz gibi oldu. Aşağıdaki komutu
+    silersen daha net anlaşılır. */
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.seat {
+    background-color: #444451;
+    height: 15px;
+    width: 15px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+
+
+.seat.selected {
+    background-color: #f6eb6f;
+    /* SEÇTİĞİMİZ KOLTUKLARA JS YARDIMI İLE BU CLASS I
+    ATAYACAĞIZ VE KOLTUĞUMUZ SEÇİLMİŞ OLACAK. */
+}
+
+.seat.reserved {
+    background-color: #fff;
+}
+
+.seat:not(.reserved):hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    /* burada hover özelliğini kısıtladık
+    reserved olanları hover dan muaf tuttuk. */
+}
+
+.seat:nth-of-type(2) {
+    margin-right: 20px;
+}
+
+.seat:nth-last-of-type(3) {
+    margin-right: 20px;
+    /* BU İKİ KOD KOLTUKLAR ARASI BOŞLUĞU SAĞLIYOR.
+    YUKARDAKİ VE BU. */
+}
+
+.row {
+    display: flex;
+    /* KOLTUKLARIN ALT ALTA DEĞİL DE YANYANA SIRALANMASINI SAĞLAYAN
+    KOD BUDUR. */
+}
+
+.screen {
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.7);
+}
+
+.movie-list {
+    margin: 20px 0;
+}
+
+.info {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    color: #777;
+    display: flex;
+}
+
+.info li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+p.text span {
+    color: #f6eb6f;
+}
